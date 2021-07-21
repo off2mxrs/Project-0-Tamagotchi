@@ -24,10 +24,10 @@ day = setInterval(function() {
     dayTimer++
     console.log('🗓 Day ' + dayTimer);
     dayEl.textContent = `🗓 ${dayTimer}`
-}, 60000)
-//🎂 age increases +1 every 10days (600,000)
-
-//💬 user types in name
+    if (blueChao.hunger >= 9) {
+        clearInterval(day)
+    }
+}, 30000)
 
 //////////////////
 // TAMAGOTCHI CLASS
@@ -57,11 +57,28 @@ const blueChao = new Chao('Blue')
 //blueChao.hunger = 5
 console.log(blueChao);
 
+//💬 user types in name//////////
 
+
+//🎂 age increases +1 every 5days (300,000)
+blueChao.age = 0;
+let age = null;
+const ageEl = document.getElementById('age')
+
+age = setInterval(function() {
+
+    blueChao.age++
+    console.log(`age: ${blueChao.age}`);
+    ageEl.textContent = `${blueChao.age} yrs`
+    if (blueChao.hunger >= 9) {
+        clearInterval(age)
+    }
+        
+}, 60000);
 // 🍔 Feed button///////////////////////////////
 const feedEl = document.getElementById('feed')
 feedEl.addEventListener('click', handleFeed)
-let burger = 5
+let burger = 1
 
 function handleFeed() {
     blueChao.hunger = blueChao.hunger - burger;
@@ -87,17 +104,17 @@ const hungerEl = document.getElementById('hunger')
 hunger = setInterval(function() {
 
     blueChao.hunger++
-    //console.log(`Hunger: ${blueChao.hunger}`);
+    console.log(`Hunger: ${blueChao.hunger}`);
     hungerEl.textContent = `🍔🍟🥤  ${blueChao.hunger}`
     
     if (blueChao.hunger === 10) {
         clearInterval(hunger);
-        console.log(blueChao);
+        //console.log(blueChao);
         return
 
      }
         
-}, 1000);
+}, 15000);
         
 
 // 🏃‍♀️ Energy counter
