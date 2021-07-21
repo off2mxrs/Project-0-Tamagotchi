@@ -7,7 +7,7 @@ const gameOverEl = document.getElementById('gameover')
 game = setInterval(function() {
     gameTimer++
     console.log(gameTimer);
-    if (hungerTimer === 10) {
+    if (blueChao.hunger >= 9) {
         clearInterval(game); //Stop🛑
         gameOverEl.textContent = `GAME OVER: Your Chao has starved! 😵`
         console.log(`GAME OVER: Your Chao has starved! 😵`)
@@ -46,35 +46,41 @@ class Chao extends Tamagotchi {
 }  
 
 const blueChao = new Chao('Blue')
-
+//blueChao.hunger = 5
 console.log(blueChao);
 
 
+// 🍔 Feed button///////////////////////////////
+const feedEl = document.getElementById('feed')
+feedEl.addEventListener('click', handleFeed)
+let burger = 5
 
+function handleFeed() {
+    blueChao.hunger = blueChao.hunger - burger;
+    hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
+    console.log(`fed 🍔`);
+}
 // 🤤 Hunger counter
 // scale 1-10
 // increases every 15,000 milisec of Gametimer
 // once counter hits 10 stop
 // Gameover message pops up
-let hungerTimer = 0;
+blueChao.hunger = 0;
 let hunger = null;
 const hungerEl = document.getElementById('hunger')
 
 hunger = setInterval(function() {
 
-    hungerTimer++
-    console.log(`Hunger: ${hungerTimer}`);
-    hungerEl.textContent = `🍔🍟🥤  ${hungerTimer}`
+    blueChao.hunger++
+    //console.log(`Hunger: ${blueChao.hunger}`);
+    hungerEl.textContent = `🍔🍟🥤  ${blueChao.hunger}`
     
-    if (hungerTimer === 10) {
+    if (blueChao.hunger === 10) {
         clearInterval(hunger);
+        console.log(blueChao);
     }
 }, 1000);
         
-
-
-
-// 🍔 Feed button
 
 // 🏃‍♀️ Energy counter
 // 😴 Rest button
