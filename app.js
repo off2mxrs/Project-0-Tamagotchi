@@ -16,8 +16,16 @@ game = setInterval(function() {
 
 
 //📅 days increase +1 every 60,000 milisec of gameTimer
+let dayTimer = 0;
+let day = null;
+const dayEl = document.getElementById('day')
 
-//🎂 age increases +1 every 10days
+day = setInterval(function() {
+    dayTimer++
+    console.log('🗓 Day ' + dayTimer);
+    dayEl.textContent = `🗓 ${dayTimer}`
+}, 60000)
+//🎂 age increases +1 every 10days (600,000)
 
 //💬 user types in name
 
@@ -59,6 +67,13 @@ function handleFeed() {
     blueChao.hunger = blueChao.hunger - burger;
     hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
     console.log(`fed 🍔`);
+    if (blueChao.hunger <= 0) {
+        hungerEl.textContent = `🍔🍟🥤 0`
+        return blueChao
+        clearInterval(hunger)
+        // console.log(blueChao.hunger);
+
+    }
 }
 // 🤤 Hunger counter
 // scale 1-10
@@ -78,7 +93,10 @@ hunger = setInterval(function() {
     if (blueChao.hunger === 10) {
         clearInterval(hunger);
         console.log(blueChao);
-    }
+        return
+
+     }
+        
 }, 1000);
         
 
