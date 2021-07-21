@@ -1,14 +1,19 @@
 //// 👾GameTimer⏳
 
 let gameTimer = 0;
-let interval = null;
+let game = null;
+const gameOverEl = document.getElementById('gameover')
 
-interval = setInterval(function() {
+game = setInterval(function() {
     gameTimer++
     console.log(gameTimer);
+    if (hungerTimer === 10) {
+        clearInterval(game); //Stop🛑
+        gameOverEl.textContent = `GAME OVER: Your Chao has starved! 😵`
+        console.log(`GAME OVER: Your Chao has starved! 😵`)
+    }
 }, 1000);
 
-clearInterval(interval); //Stop🛑
 
 //📅 days increase +1 every 60,000 milisec of gameTimer
 
@@ -47,16 +52,20 @@ class Chao {
 // Gameover message pops up
 let hungerTimer = 0;
 let hunger = null;
+const hungerEl = document.getElementById('hunger')
 
 hunger = setInterval(function() {
-   // if (gameTimer === 10) {
-    //}
-    
+
     hungerTimer++
     console.log(`Hunger: ${hungerTimer}`);
-}, 10000);
+    hungerEl.textContent = `🍔🍟🥤  ${hungerTimer}`
+    
+    if (hungerTimer === 10) {
+        clearInterval(hunger);
+    }
+}, 1000);
+        
 
-clearInterval(hunger);
 
 
 // 🍔 Feed button
