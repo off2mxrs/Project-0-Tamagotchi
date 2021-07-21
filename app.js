@@ -25,24 +25,30 @@ game = setInterval(function() {
 // TAMAGOTCHI CLASS
 
 class Tamagotchi {
-    constructor(name, age, color){
+    constructor(name){
         this.name = name;
         this.age = 0;
-        this.color = color;
+        this.hunger = 0;
+        this.sleep = 0;
+        this.happiness = 0;
+        
     }
     // use a method() to make character say random phrase once clicked
 }
 
 /// Instantiate Chao ////////
-class Chao {
+class Chao extends Tamagotchi {
     constructor(name){
-        this.name = name;
-        this.chaos = [];
+        super(name)
+      
     }
-    createChao() {
-        const newChao = new Tamagotchi(this.name, this.chaos.length)
-    }
+   
 }  
+
+const blueChao = new Chao('Blue')
+
+console.log(blueChao);
+
 
 
 // 🤤 Hunger counter
