@@ -1,7 +1,22 @@
 body {
     background: cornsilk;
+    text-align: center;
 }
 
 h1 {
     color: darkcyan;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: darkcyan;
+}
+
+aside {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* background: rgb(55, 59, 59); */
 }

@@ -1,5 +1,4 @@
 //// 👾GameTimer⏳
-
 let gameTimer = 0;
 let game = null;
 const gameOverEl = document.getElementById('gameover')
@@ -53,12 +52,14 @@ class Chao extends Tamagotchi {
    
 }  
 
-const blueChao = new Chao('Blue')
+const blueChao = new Chao(this.name)
 //blueChao.hunger = 5
 console.log(blueChao);
 
 //💬 user types in name//////////
-
+const nameEl = document.getElementById('name')
+blueChao.name = prompt('Name your Chao')
+nameEl.textContent = `NAME: ${blueChao.name}` 
 
 //🎂 age increases +1 every 5days (300,000)
 blueChao.age = 0;
