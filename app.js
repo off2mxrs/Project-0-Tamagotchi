@@ -6,16 +6,23 @@ const gameOverEl = document.getElementById('gameover')
 game = setInterval(function() {
     gameTimer++
     console.log(gameTimer);
-    if (blueChao.hunger >= 9) {
+    if (blueChao.hunger >= 10) {
         clearInterval(game); //Stop🛑
+        //prompt('GAME OVER')
         gameOverEl.textContent = `GAME OVER: Your Chao has starved! 😵`
         console.log(`GAME OVER: Your Chao has starved! 😵`)
+    }
+    if (blueChao.hunger <= -1) {
+        clearInterval(game); //Stop🛑
+        //prompt('GAME OVER')
+        gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
+        console.log(`GAME OVER: Your Chao was over fed! 😵`)
     }
 }, 1000);
 
 
 //📅 days increase +1 every 60,000 milisec of gameTimer
-let dayTimer = 0;
+let dayTimer = 1;
 let day = null;
 const dayEl = document.getElementById('day')
 
@@ -25,6 +32,10 @@ day = setInterval(function() {
     dayEl.textContent = `🗓 ${dayTimer}`
     if (blueChao.hunger >= 9) {
         clearInterval(day)
+        return
+    } if (blueChao.hunger <= -1) {
+        clearInterval(day);
+        return
     }
 }, 30000)
 
@@ -71,8 +82,10 @@ age = setInterval(function() {
     blueChao.age++
     console.log(`age: ${blueChao.age}`);
     ageEl.textContent = `${blueChao.age} yrs`
-    if (blueChao.hunger >= 9) {
+    if (blueChao.hunger === 10) {
         clearInterval(age)
+    } if (blueChao.hunger <= -1) {
+        clearInterval(age);
     }
         
 }, 60000);
@@ -106,16 +119,30 @@ hunger = setInterval(function() {
 
     blueChao.hunger++
     console.log(`Hunger: ${blueChao.hunger}`);
-    hungerEl.textContent = `🍔🍟🥤  ${blueChao.hunger}`
-    
+    // if (blueChao.hunger === 1 || 2 || 3) {
+    //     hungerEl.textContent = `🍔🍟🥤  🤩`
+    // }
+    // else if (blueChao.hunger === 4 || 5 || 6) {
+    //     hungerEl.textContent = `🍔🍟🥤  ☹️`
+    // }
+    // else if (blueChao.hunger === 7 || 8 || 9) {
+    //     hungerEl.textContent = `🍔🍟🥤  😖`
+    // }
+        
+    hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
     if (blueChao.hunger === 10) {
         clearInterval(hunger);
         //console.log(blueChao);
         return
 
-     }
+     } if (blueChao.hunger <= -1) {
+        clearInterval(hunger);
+       
+        gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
+        //console.log(`GAME OVER: Your Chao has starved! 😵`)
+    }
         
-}, 15000);
+}, 1000);
         
 
 // 🏃‍♀️ Energy counter
