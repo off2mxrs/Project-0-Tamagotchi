@@ -9,25 +9,29 @@
     <title>Chaogotchi</title>
 </head>
 <body>
-    <header>
+    <main>
+
+    
+    <header id="header">
         <h1>Chaogotchi</h1>
         <h2 id="gameover"></h2>
     </header>
     
     <section>
         <p id="day">🗓 1</p>
-        <p id="name">Name: </p>
-        <p id="age">0 yrs</p>
     </section>
-
+    <!-- <div class="f">h</div> -->
     <main>
-        <aside> 
+        <aside class="stats"> 
+            <p id="name">Name: </p>
+            <p id="age">0 yrs</p>
             <p id="hunger">🍔🍟🥤 0</p>
             <p id="energy">😴🛏🥱 0</p>
             <p id="happiness">🤗🤪🥳 0</p>
         </aside>
         <image>
-            <img src="/images/chao.jpeg">
+            <!-- <img src="/images/chao.jpeg"> -->
+            <img id="sitting" src="/images/chao.png">
         </image>    
     </main>
 
@@ -36,5 +40,6 @@
         <button id="rest">Rest</button>
         <button id="play">Play</button>
     </nav>
+ </main>
 </body>
 </html>

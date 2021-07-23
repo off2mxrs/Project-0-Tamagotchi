@@ -1,6 +1,24 @@
+/* main {
+    color;:rgb(253, 253, 72)
+
+} */
 body {
-    background: cornsilk;
     text-align: center;
+    background-size: cover;    
+    background-image: url(/images/cac62430292632111b3640fd5c3eb0d5.jpeg);
+}
+
+#sitting {
+    max-width: 20%;
+    transform: rotate3d(1,2.0,3.0,10deg)
+    
+}
+
+#header{
+    background-image: url(/images/152472-bigthumbnail.webp);
+    max-width: 360px;
+    max-height: 450px;
+    /* background-size: cover; */
 }
 
 h1 {
@@ -14,9 +32,28 @@ section {
     background: darkcyan;
 }
 
-aside {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* background: rgb(55, 59, 59); */
+.stats {
+  height: 50%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 1; /* Stay at the top */
+  left: 20;
+  background-color: rgba(255, 252, 252, 0.5);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+    border-radius: 10px;
+    padding: 1;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(253, 253, 72);
+    font-size: 35px;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px rgb(18, 196, 142);
+    border-radius: 10px;
+
 }
