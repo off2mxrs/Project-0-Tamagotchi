@@ -6,16 +6,16 @@ const gameOverEl = document.getElementById('gameover')
 game = setInterval(function() {
     gameTimer++
     console.log(gameTimer);
-    if (blueChao.hunger >= 10) {
+    if (blueChao.hunger >= 10 || (blueChao.sleep >= 10) || (blueChao.happiness >= 10)) {
         clearInterval(game); //Stop🛑
         //prompt('GAME OVER')
-        gameOverEl.textContent = `GAME OVER: Your Chao has starved! 😵`
+        gameOverEl.textContent = `GAME OVER: Your Chao has popped! 😵`
         console.log(`GAME OVER: Your Chao has starved! 😵`)
     }
-    if (blueChao.hunger <= -1) {
+    if (blueChao.hunger <= -1 || (blueChao.sleep <=-1) || (blueChao.happiness <= -1)) {
         clearInterval(game); //Stop🛑
         //prompt('GAME OVER')
-        gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
+        gameOverEl.textContent = `GAME OVER: Your Chao was popped! 😵`
         console.log(`GAME OVER: Your Chao was over fed! 😵`)
     }
 }, 1000);
@@ -169,21 +169,56 @@ sleep = setInterval(function() {
     }
         
      else {   
-        sleepEl.textContent = ` Energy ☠️`
+        (sleepEl.textContent = ` Energy ☠️`) || (hungerEl.textContent = ' Hunger ☠️')
         clearInterval(sleep);
         //console.log(blueChao);
         return
 
-     } if (blueChao.sleep <= -1) {
+     } if (blueChao.sleep <= -1 || (blueChao.hunger <= -1)) {
         clearInterval(sleep);
        
-        gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
-        //console.log(`GAME OVER: Your Chao has starved! 😵`)
+        gameOverEl.textContent = `GAME OVER: Your Chao was exhausted! 😵`
+        //console.log(`GAME OVER: Your Chao was exhausted! 😵`)
     }
         
-}, 1000);
+}, 3000);
 
 // 😴 Rest button
 
 // 🤪 Happiness counter
+blueChao.happiness = 0;
+let happiness = null;
+const happinessEl = document.getElementById('happiness')
+
+happiness = setInterval(function() {
+
+    blueChao.happiness++
+    console.log(`happiness: ${blueChao.happiness}`);
+    if (blueChao.happiness <= 3) {
+        happinessEl.textContent = `Happiness 🤪`
+
+    }
+    else if (blueChao.happiness <= 6) {
+        happinessEl.textContent = ` Happiness 😥`
+    }
+    
+    else if (blueChao.happiness <= 9) {
+        happinessEl.textContent = ` Happiness 😭`
+    }
+        
+     else {   
+        (happinessEl.textContent = ` Energy ☠️`) || (hungerEl.textContent = ' Hunger ☠️')
+        clearInterval(happiness);
+        //console.log(blueChao);
+        return
+
+     } if (blueChao.happiness <= -1 || (blueChao.hunger <= -1)) {
+        clearInterval(happiness);
+       
+        gameOverEl.textContent = `GAME OVER: Your Chao has popped! 😵`
+        //console.log(`GAME OVER: Your Chao was exhausted! 😵`)
+    }
+        
+}, 1000);
+
 // 🤽‍♀️ Play button
