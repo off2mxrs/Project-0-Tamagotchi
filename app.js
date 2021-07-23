@@ -29,7 +29,7 @@ const dayEl = document.getElementById('day')
 day = setInterval(function() {
     dayTimer++
     console.log('Chao Garden: Day ' + dayTimer);
-    dayEl.textContent = `🗓 ${dayTimer}`
+    dayEl.textContent = `Chao Garden: Day ${dayTimer}`
     if (blueChao.hunger >= 9) {
         clearInterval(day)
         return
@@ -119,21 +119,22 @@ hunger = setInterval(function() {
 
     blueChao.hunger++
     console.log(`Hunger: ${blueChao.hunger}`);
-    // if (blueChao.hunger === 1 || 2 || 3) {
-    //     hungerEl.textContent = `🍔🍟🥤  🤩`
-    // }
-    // else if (blueChao.hunger === 4 || 5 || 6) {
-    //     hungerEl.textContent = `🍔🍟🥤  ☹️`
-    // }
-    // else if (blueChao.hunger === 7 || 8 || 9) {
-    //     hungerEl.textContent = `🍔🍟🥤  😖`
-    // }
+    if (blueChao.hunger <= 3) {
+        hungerEl.textContent = `🍔🍟🥤  🤩`
+
+    }
+    else if (blueChao.hunger <= 6) {
+        hungerEl.textContent = `🍔🍟🥤  ☹️`
+    }
+    else {
+        hungerEl.textContent = `🍔🍟🥤  😖`
+    //}
         
-    hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
-    if (blueChao.hunger === 10) {
-        clearInterval(hunger);
-        //console.log(blueChao);
-        return
+    // hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
+    // if (blueChao.hunger === 10) {
+    //     clearInterval(hunger);
+    //     //console.log(blueChao);
+    //     return
 
      } if (blueChao.hunger <= -1) {
         clearInterval(hunger);
