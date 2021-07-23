@@ -4,49 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="new.css">
     <script defer src="app.js"></script>
     <title>Chaogotchi</title>
 </head>
 <body>
-    <main>
+    <container class="container">
 
-    <div id="top">
+    <div class="title">
 
         <header id="header">
             <h1>Chaogotchi</h1>
-            <h2 id="gameover"></h2>
         </header>
-        
-        <section class="rect">
-            <p id="day"> Chao Garden: Day 1</p>
-        </section>
     </div>
-    <!-- <div class="f">h</div> -->
-    <main>
-        <aside class="stats"> 
-            <p id="name">Name: </p>
-            <p id="age">0 yrs</p>
-            
-            <p class="hunger">Hunger 
-                <div id="emoji">0</div>
-                <div id="bar"></div>
-            </p>
-            
-            <p id="energy">😴🛏🥱 0</p>
-            <p id="happiness">🤗🤪🥳 0</p>
-        </aside>
+    
+    <section class= 'location'>
+        <p id="day" class="rect"> Chao Garden: Day 1</p>
+    </section>
+    
+    
+    <aside class="stats"> 
+        <p id="name"> </p>
+        <p id="age">Age: 0</p>
+        
+        <p id="hunger">Hunger 🤩          
+            <div id="bar"></div>
+        </p>
+        
+        <p id="energy">Energy 🏃‍♀️
+            <div id="e-bar"></div>
+        </p>
+        <p id="happiness">Happiness 🤪
+            <div id="h-bar"></div>
+        </p>
+    </aside>
+
+
+    <main class="tamagotchi">
+        <h2 id="gameover"></h2>
         <image>
             <!-- <img src="/images/chao.jpeg"> -->
-            <img id="sitting" src="/images/chao.png">
+            <img class="sitting" src="/images/chao.png">
         </image>    
     </main>
 
-    <nav>
+    <nav class="control">
         <button id="feed">Feed</button>
         <button id="rest">Rest</button>
         <button id="play">Play</button>
     </nav>
- </main>
+    </container>
 </body>
 </html>

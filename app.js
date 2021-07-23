@@ -70,7 +70,7 @@ console.log(blueChao);
 //💬 user types in name//////////
 const nameEl = document.getElementById('name')
 blueChao.name = prompt('Name your Chao')
-nameEl.textContent = `NAME: ${blueChao.name}` 
+nameEl.textContent = `${blueChao.name}` 
 
 //🎂 age increases +1 every 5days (300,000)
 blueChao.age = 0;
@@ -81,7 +81,7 @@ age = setInterval(function() {
 
     blueChao.age++
     console.log(`age: ${blueChao.age}`);
-    ageEl.textContent = `${blueChao.age} yrs`
+    ageEl.textContent = `Age: ${blueChao.age}🔺`
     if (blueChao.hunger === 10) {
         clearInterval(age)
     } if (blueChao.hunger <= -1) {
@@ -113,26 +113,26 @@ function handleFeed() {
 // Gameover message pops up
 blueChao.hunger = 0;
 let hunger = null;
-const hungerEl = document.getElementById('emoji')
+const hungerEl = document.getElementById('hunger')
 
 hunger = setInterval(function() {
 
     blueChao.hunger++
     console.log(`Hunger: ${blueChao.hunger}`);
     if (blueChao.hunger <= 3) {
-        hungerEl.textContent = `🤩`
+        hungerEl.textContent = `Hunger 🤩`
 
     }
     else if (blueChao.hunger <= 6) {
-        hungerEl.textContent = `  ☹️`
+        hungerEl.textContent = ` Hunger 🤤`
     }
     
     else if (blueChao.hunger <= 9) {
-        hungerEl.textContent = `  😖`
+        hungerEl.textContent = ` Hunger 😖`
     }
         
      else {   
-        hungerEl.textContent = `  ☠️`
+        hungerEl.textContent = ` Hunger ☠️`
         clearInterval(hunger);
         //console.log(blueChao);
         return
