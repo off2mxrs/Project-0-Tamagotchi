@@ -30,6 +30,11 @@ h1 {
     color: darkcyan;
 }
 
+#emoji {
+    display: flex;
+    font-size: 20px;
+}
+
 #day {
     font-size: 30px;
     font-family: fantasy;
@@ -64,8 +69,8 @@ section {
 } 
 
 .stats {
-  height: 50%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
+  height: 70%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 1; /* Stay at the top */
@@ -77,6 +82,24 @@ section {
     padding: 1;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
 
+}
+
+#bar {
+     
+    height: 10px;
+    width: 100px;
+    background: rgb(19, 3, 233);
+    /* margin: 50px auto; */
+    border-radius: 0px;
+    border-style: double;
+    border-color: rgb(0, 0, 0);
+}
+
+.hunger {
+    display: inline grid;
+    /* flex-wrap: wrap;
+    flex-direction: row; */
+    
 }
 
 #name {

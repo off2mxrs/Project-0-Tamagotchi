@@ -113,28 +113,29 @@ function handleFeed() {
 // Gameover message pops up
 blueChao.hunger = 0;
 let hunger = null;
-const hungerEl = document.getElementById('hunger')
+const hungerEl = document.getElementById('emoji')
 
 hunger = setInterval(function() {
 
     blueChao.hunger++
     console.log(`Hunger: ${blueChao.hunger}`);
     if (blueChao.hunger <= 3) {
-        hungerEl.textContent = `🍔🍟🥤  🤩`
+        hungerEl.textContent = `🤩`
 
     }
     else if (blueChao.hunger <= 6) {
-        hungerEl.textContent = `🍔🍟🥤  ☹️`
+        hungerEl.textContent = `  ☹️`
     }
-    else {
-        hungerEl.textContent = `🍔🍟🥤  😖`
-    //}
+    
+    else if (blueChao.hunger <= 9) {
+        hungerEl.textContent = `  😖`
+    }
         
-    // hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
-    // if (blueChao.hunger === 10) {
-    //     clearInterval(hunger);
-    //     //console.log(blueChao);
-    //     return
+     else {   
+        hungerEl.textContent = `  ☠️`
+        clearInterval(hunger);
+        //console.log(blueChao);
+        return
 
      } if (blueChao.hunger <= -1) {
         clearInterval(hunger);
