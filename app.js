@@ -28,7 +28,7 @@ const dayEl = document.getElementById('day')
 
 day = setInterval(function() {
     dayTimer++
-    console.log('🗓 Day ' + dayTimer);
+    console.log('Chao Garden: Day ' + dayTimer);
     dayEl.textContent = `🗓 ${dayTimer}`
     if (blueChao.hunger >= 9) {
         clearInterval(day)
