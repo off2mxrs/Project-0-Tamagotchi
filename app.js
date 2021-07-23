@@ -147,7 +147,42 @@ hunger = setInterval(function() {
 }, 1000);
         
 
-// 🏃‍♀️ Energy counter
+// 🏃‍♀️ Sleep counter
+blueChao.sleep = 0;
+let sleep = null;
+const sleepEl = document.getElementById('sleep')
+
+sleep = setInterval(function() {
+
+    blueChao.sleep++
+    console.log(`sleep: ${blueChao.sleep}`);
+    if (blueChao.sleep <= 3) {
+        sleepEl.textContent = `Energy 🏃‍♀️`
+
+    }
+    else if (blueChao.sleep <= 6) {
+        sleepEl.textContent = ` Energy 🥱`
+    }
+    
+    else if (blueChao.sleep <= 9) {
+        sleepEl.textContent = ` Energy 😪`
+    }
+        
+     else {   
+        sleepEl.textContent = ` Energy ☠️`
+        clearInterval(sleep);
+        //console.log(blueChao);
+        return
+
+     } if (blueChao.sleep <= -1) {
+        clearInterval(sleep);
+       
+        gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
+        //console.log(`GAME OVER: Your Chao has starved! 😵`)
+    }
+        
+}, 1000);
+
 // 😴 Rest button
 
 // 🤪 Happiness counter
