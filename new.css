@@ -4,8 +4,8 @@
     grid-template-rows: 100px 200px 200px 200px;
     grid-template-areas: 
       "header header sidebar1 sidebar1"
-      "sidebar main main main"
-      "sidebar footer footer footer";
+      "sidebar . main sidebar3"
+      "sidebar footer footer sidebar3";
 
       background-image: url(/images/cac62430292632111b3640fd5c3eb0d5.jpeg);
       background-size: 200px 200px 200px 200px;
@@ -25,10 +25,13 @@
     background-size: cover;
     max-width: auto;
     max-height: 100px;
-    position: relative;
+    opacity: .8;
+    border-radius: 1px;
+    padding: 0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
   }
   h1 {
-    color: rgb(231, 228, 14);
+    color: rgb(255, 251, 0);
     font-family: monospace;
     font-size: 50px;
     
@@ -39,8 +42,12 @@
       grid-area: sidebar1;
       /* background-color: rgb(238, 232, 232); */
       background-image: url(/images/152472-bigthumbnail.webp);
+      opacity: .8;
       max-height: 100px;
-      justify-self: stretch
+      justify-self: stretch;
+      border-radius: 0px;
+      padding: 1;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
   }
 
   #day {
@@ -55,17 +62,26 @@
 
   .rect {
     animation-name: rainbow;
-    animation-delay: 5s;
-    animation-duration: 10s;
+    animation-delay: 10s;
+    animation-duration: 30s;
     animation-timing-function: ease-in-out;
 }
 
 @keyframes rainbow {
     0% {
-        color: blue;
+        color: rgb(208, 255, 0);
+    }
+    10% {
+        color: tomato;
+    }
+    25%{
+        color: teal;
     }
     50% {
         color: green;
+    }
+    75% {
+        color: rgb(233, 3, 3);
     }
     100% {
         color: yellow;
@@ -75,13 +91,13 @@
 
   .tamagotchi {
     grid-area: main;
-    background-color: darkcyan;
+    /* background-color: darkcyan; */
     /* grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: auto;
     grid-row-end: auto; */
     justify-self: stretch;
-    border-style: double;
+    /* border-style: double; */
     
   }
 
@@ -89,7 +105,7 @@
     max-width: 150px;
     /* transform: rotate3d(1,2.0,3.0,10deg); */
     background-image: url('/images/chao.png');
-
+    
 }
 
 
@@ -126,12 +142,13 @@
     /* z-index: 5; /* Stay on top */
     /* top: 1; Stay at the top */ 
     left: 20;
-    justify-self: center;
+    justify-self: stretch;
     align-self: stretch;
 
     background-color: rgba(255, 252, 252, 0.5);
+    overflow-y: hidden;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    padding-top: 0px;
       border-radius: 10px;
       padding: 1;
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
@@ -190,11 +207,104 @@
     border-color: rgb(0, 0, 0);
 }
 
-  .control {
+.control:hover {
+    opacity: 1;
+}  
+ .control {
     grid-area: footer;
-    background-color: hotpink;
-    justify-self: center;
+  
+    justify-self: left;
     align-self: end;
+    background-image: url('/images/152472-bigthumbnail.webp');
+    background-color: rgba(253, 252, 255, 0.5);
+    overflow-y: hidden;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    opacity: .8;
+    padding-left: 90px;
+    padding-right: 86px;
+      border-radius: 5px;
+      /* padding: 1; */
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+  
+  }
+
+
+  #feed {
+      background-color: rgb(25, 41, 185, 0.5);
+      font-size: 50px;
+      /* background-image: url(/images/Nintendo-Game-Boy-Advance-White.jpeg); */
+      background-size: cover;
+      border-radius: 50px;
+      border-style: ridge;
+      border-color: rgb(10, 4, 41, 0.5);
+      border-width: thick;
+      justify-content: center;
+      align-items: center;
+
+  }
+  #feed:hover {
+    background-color: rgba(217, 255, 3, 0.5);
+   
+}
+  #rest{
+      background-color: rgb(46, 145, 0, 0.5);
+      font-size: 50px;
+      /* background-image: url(/images/Nintendo-Game-Boy-Advance-White.jpeg); */
+      background-size: cover;
+      border-radius: 50px;
+      border-style: ridge;
+      border-color: rgb(10, 4, 41, 0.5);
+      border-width: thick;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  #rest:hover {
+    background-color: rgba(170, 16, 184, 0.5);
+  }
+  #play {
+      background-color: rgb(194, 17, 17, 0.7);
+      font-size: 50px;
+      /* background-image: url(/images/Nintendo-Game-Boy-Advance-White.jpeg); */
+      background-size: cover;
+      border-radius: 50px;
+      border-style: ridge;
+      border-color: rgb(10, 4, 41, 0.5);
+      border-width: thick;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  #play:hover{
+    background-color: rgba(17, 194, 185, 0.7);
   }
   
- 
+ .sidebar3{
+    grid-area: sidebar3;
+    /* height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px; */
+    background-color: darkgoldenrod;
+    /* height: 40%; /* Full-height: remove this if you want "auto" height */
+    width: 200px; 
+    /* position: fixed; Fixed Sidebar (stay in place on scroll) */ 
+    /* z-index: 5; /* Stay on top */
+    /* top: 1; Stay at the top */ 
+    left: 20;
+    justify-self: stretch;
+    align-self: stretch;
+
+    background-color: rgba(255, 252, 252, 0.5);
+    overflow-y: hidden;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 0px;
+      border-radius: 10px;
+      padding: 1;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+  }
+
+  
