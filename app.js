@@ -33,7 +33,7 @@ day = setInterval(function() {
     if (blueChao.sleep <= -1 || (blueChao.sleep >= 10) || (blueChao.happiness <= -1 )|| (blueChao.happiness >= 10) || (blueChao.hunger <= -1 )|| (blueChao.hunger >= 10)){
         clearInterval(day);
     }
-}, 3000)
+}, 15000)
 
 //////////////////
 // TAMAGOTCHI CLASS
@@ -83,7 +83,7 @@ age = setInterval(function() {
     }
     
         
-}, 6000);
+}, 30000);
 
 // 🍎 Feed button///////////////////////////////
 const feedEl = document.getElementById('feed')
@@ -263,3 +263,19 @@ function handlePlay() {
 
     }
 }
+
+///////////
+// RESET
+
+// const resetEl = document.getElementById('reset')
+// resetEl.addEventListener('click', handleReset)
+
+// function handleReset () {
+//     console.log('reset');
+//     blueChao.age = 0;
+//     age = null
+//     dayTimer = 1;
+//     day = null;
+//     dayEl.textContent = `Chao Garden: Day ${dayTimer}`
+//     day()
+// }
