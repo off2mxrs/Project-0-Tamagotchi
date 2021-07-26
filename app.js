@@ -1,3 +1,6 @@
+//song
+const song = document.getElementById('song')
+song.volume = 0.05;
 //// 👾GameTimer⏳
 // let gameTimer = 0;
 // let game = null;
