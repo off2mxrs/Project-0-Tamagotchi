@@ -15,7 +15,7 @@ game = setInterval(function() {
     if (blueChao.hunger <= -1 || (blueChao.sleep <=-1) || (blueChao.happiness <= -1)) {
         clearInterval(game); //Stop🛑
         //prompt('GAME OVER')
-        gameOverEl.textContent = `GAME OVER: Your Chao was popped! 😵`
+        gameOverEl.textContent = `GAME OVER: Your Chao has popped! 😵`
         console.log(`GAME OVER: Your Chao was over fed! 😵`)
     }
 }, 1000);
@@ -89,17 +89,18 @@ age = setInterval(function() {
     }
         
 }, 60000);
-// 🍔 Feed button///////////////////////////////
+
+// 🍎 Feed button///////////////////////////////
 const feedEl = document.getElementById('feed')
 feedEl.addEventListener('click', handleFeed)
-let burger = 1
+let apple = 1
 
 function handleFeed() {
-    blueChao.hunger = blueChao.hunger - burger;
-    hungerEl.textContent = `🍔🍟🥤 ${blueChao.hunger}`
-    console.log(`fed 🍔`);
+    blueChao.hunger = blueChao.hunger - apple;
+    hungerEl.textContent = `🍎 ${blueChao.hunger}`
+    console.log(`fed 🍎`);
     if (blueChao.hunger <= 0) {
-        hungerEl.textContent = `🍔🍟🥤 0`
+        hungerEl.textContent = ' Hunger ☠️'
         return blueChao
         clearInterval(hunger)
         // console.log(blueChao.hunger);
@@ -132,14 +133,14 @@ hunger = setInterval(function() {
     }
         
      else {   
-        hungerEl.textContent = ` Hunger ☠️`
+        hungerEl.textContent = ' Hunger ☠️'
         clearInterval(hunger);
         //console.log(blueChao);
         return
 
      } if (blueChao.hunger <= -1) {
         clearInterval(hunger);
-       
+        hungerEl.textContent = ' Hunger ☠️'
         gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
         //console.log(`GAME OVER: Your Chao has starved! 😵`)
     }
@@ -176,15 +177,30 @@ sleep = setInterval(function() {
 
      } if (blueChao.sleep <= -1 || (blueChao.hunger <= -1)) {
         clearInterval(sleep);
-       
-        gameOverEl.textContent = `GAME OVER: Your Chao was exhausted! 😵`
+        sleepEl.textContent = ` Energy ☠️`
+        gameOverEl.textContent = `GAME OVER: Your Chao has popped! 😵`
         //console.log(`GAME OVER: Your Chao was exhausted! 😵`)
     }
         
 }, 3000);
 
-// 😴 Rest button
+// 🛏 bed button
+const bedEl = document.getElementById('rest')
+bedEl.addEventListener('click', handleSleep)
+let bed = 1
 
+function handleSleep() {
+    blueChao.sleep = blueChao.sleep - bed;
+    sleepEl.textContent = `🛏 ${blueChao.sleep}`
+    console.log(`slept 🛏`);
+    if (blueChao.sleep <= 0) {
+        sleepEl.textContent = ` Energy ☠️`
+        return blueChao
+        clearInterval(sleep)
+        // console.log(blueChao.sleep);
+
+    }
+}
 // 🤪 Happiness counter
 blueChao.happiness = 0;
 let happiness = null;
@@ -207,7 +223,7 @@ happiness = setInterval(function() {
     }
         
      else {   
-        (happinessEl.textContent = ` Energy ☠️`) || (hungerEl.textContent = ' Hunger ☠️')
+        (happinessEl.textContent = ` Happiness ☠️`) || (hungerEl.textContent = ' Hunger ☠️')
         clearInterval(happiness);
         //console.log(blueChao);
         return
@@ -219,6 +235,6 @@ happiness = setInterval(function() {
         //console.log(`GAME OVER: Your Chao was exhausted! 😵`)
     }
         
-}, 1000);
+}, 2000);
 
 // 🤽‍♀️ Play button
