@@ -4,7 +4,7 @@
     grid-template-rows: 100px 200px 200px 200px;
     grid-template-areas: 
       "header header sidebar1 sidebar1"
-      "sidebar . main sidebar3"
+      "sidebar main main sidebar3"
       "sidebar footer footer sidebar3";
 
       background-image: url(/images/cac62430292632111b3640fd5c3eb0d5.jpeg);
@@ -39,8 +39,16 @@
 }
 #gameover {
     color: crimson;
-    font-size: 45px;
+    font-size: 28px;
     font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#greet {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-family: fantasy;
+    background-color: rgba(52, 148, 172, 0.5);
 }
 
 
@@ -107,11 +115,14 @@
     
   }
 
-  .sitting {
+  .gif {
+    max-width: 250px;
+    padding: 70px;
+}
+
+.chaos {
     max-width: 150px;
-    /* transform: rotate3d(1,2.0,3.0,10deg); */
-    background-image: url('/images/chao.png');
-    
+    padding: 10px;
 }
 
 

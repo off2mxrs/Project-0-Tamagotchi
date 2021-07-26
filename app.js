@@ -68,6 +68,11 @@ const nameEl = document.getElementById('name')
 blueChao.name = prompt('Name your Chao')
 nameEl.textContent = `${blueChao.name}` 
 
+const hiEl = document.getElementById('hi')
+hiEl.textContent = `Hello ${blueChao.name}!`
+
+const greetEl = document.getElementById('greet')
+
 //🎂 age increases +1 every 5days (300,000)
 blueChao.age = 0;
 let age = null;
@@ -131,6 +136,7 @@ hunger = setInterval(function() {
         hungerEl.textContent = ' Hunger ☠️'
         clearInterval(hunger);
         gameOverEl.textContent = `GAME OVER: Your Chao has starved! 😵`
+        greetEl.textContent = ''
         //console.log(blueChao);
         return
 
@@ -138,6 +144,7 @@ hunger = setInterval(function() {
         clearInterval(hunger);
         hungerEl.textContent = ' Hunger ☠️'
         gameOverEl.textContent = `GAME OVER: Your Chao was over fed! 😵`
+        greetEl.textContent = ''
         //console.log(`GAME OVER: Your Chao has starved! 😵`)
     }
 
@@ -173,6 +180,7 @@ sleep = setInterval(function() {
         (sleepEl.textContent = ` Energy ☠️`)
         clearInterval(sleep);
         gameOverEl.textContent = `GAME OVER: Your Chao was exhausted! 😵`
+        greetEl.textContent = ''
         //console.log(blueChao);
         return
 
@@ -180,6 +188,7 @@ sleep = setInterval(function() {
         clearInterval(sleep);
         sleepEl.textContent = ` Energy ☠️`
         gameOverEl.textContent = `GAME OVER: Your Chao has over slept! 😵`
+        greetEl.textContent = ''
         //console.log(`GAME OVER: Your Chao was exhausted! 😵`)
     }
 
@@ -231,6 +240,7 @@ happiness = setInterval(function() {
         (happinessEl.textContent = ` Happiness ☠️` || (hungerEl.textContent = ' Hunger ☠️') || (sleepEl.textContent = ` Energy ☠️`))
         clearInterval(happiness);
         gameOverEl.textContent = `GAME OVER: Your Chao is depressed! 😵`
+        greetEl.textContent = ''
         //console.log(blueChao);
         return
 
@@ -238,6 +248,7 @@ happiness = setInterval(function() {
         clearInterval(happiness);
        
         gameOverEl.textContent = `GAME OVER: Your Chao has over heated! 😵`
+        greetEl.textContent = ''
         //console.log(`GAME OVER: Your Chao was exhausted! 😵`)
     }
     if (blueChao.sleep <= -1 || (blueChao.sleep >= 10) || (blueChao.hunger <= -1 )|| (blueChao.hunger >= 10)){
