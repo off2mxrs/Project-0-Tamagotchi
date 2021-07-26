@@ -155,7 +155,7 @@ hunger = setInterval(function() {
         clearInterval(hunger);
     }
         
-}, 4000);
+}, 2300);
         
 
 // 🏃‍♀️ Sleep counter
@@ -199,7 +199,7 @@ sleep = setInterval(function() {
         clearInterval(sleep);
     }
         
-}, 1000);
+}, 3200);
 
 // 🛏 bed button
 const bedEl = document.getElementById('rest')
@@ -258,7 +258,7 @@ happiness = setInterval(function() {
         clearInterval(happiness);
     }
         
-}, 6000);
+}, 1700);
 
 // 🧸 Play button
 const playEl = document.getElementById('play')
