@@ -1,6 +1,7 @@
 //song
 const song = document.getElementById('song')
 song.volume = 0.05;
+
 //// 👾GameTimer⏳
 // let gameTimer = 0;
 // let game = null;
@@ -124,7 +125,7 @@ hunger = setInterval(function() {
     blueChao.hunger++
     console.log(`Hunger: ${blueChao.hunger}`);
     if (blueChao.hunger <= 3) {
-        hungerEl.textContent = `Hunger 🤩`
+        hungerEl.textContent = `Hunger 😋`
 
     }
     else if (blueChao.hunger <= 6) {
@@ -168,7 +169,7 @@ sleep = setInterval(function() {
     blueChao.sleep++
     console.log(`sleep: ${blueChao.sleep}`);
     if (blueChao.sleep <= 3) {
-        sleepEl.textContent = `Energy 🏃‍♀️`
+        sleepEl.textContent = `Energy 🤩`
 
     }
     else if (blueChao.sleep <= 6) {
